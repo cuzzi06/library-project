@@ -1,1 +1,69 @@
+:root {
+  /* Base */
+  --color-background: #4b2e2a; /* Madera oscura, fondo principal */
+  --color-card: #faf3e0; /* Blanco cálido, fondo de las cards */
 
+  /* Acentos */
+  --color-primary: #e07a5f; /* Naranja terracota, botones principales */
+  --color-secondary: #f2cc8f; /* Dorado suave, hovers y estado leído */
+  --color-accent: #81b29a; /* Verde oliva suave, estado no leído */
+  --color-danger: #b35c44; /* Rojo tierra, botón Remove y Cancel */
+
+  /* Texto */
+  --color-text-light: #f4ede4; /* Texto claro sobre fondo oscuro */
+  --color-text-dark: #2d2d2a; /* Texto oscuro sobre cards claras */
+
+  /* Margenes y Padding */
+
+  --general-margin: 3rem;
+  --general-padding: 2rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Body */
+
+body {
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 100vh;
+}
+
+/* Header and new book button */
+
+h1 {
+  color: var(--color-text-light);
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+button {
+  padding: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-weight: 200;
+  box-shadow: -4px 4px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  border: 1px solid var(--color-text-light);
+}
+
+button:active {
+  border: 1px solid var(--color-primary);
+  transform: translate(-1px, 1px);
+  box-shadow: none;
+}
