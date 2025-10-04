@@ -8,6 +8,7 @@
   --color-secondary: #f2cc8f; /* Dorado suave, hovers y estado leído */
   --color-accent: #81b29a; /* Verde oliva suave, estado no leído */
   --color-danger: #b35c44; /* Rojo tierra, botón Remove y Cancel */
+  --color-input: #d9cfc3; /* Color para input */
 
   /* Texto */
   --color-text-light: #f4ede4; /* Texto claro sobre fondo oscuro */
@@ -66,4 +67,124 @@ button:active {
   border: 1px solid var(--color-primary);
   transform: translate(-1px, 1px);
   box-shadow: none;
+}
+
+/* Form */
+
+#bookDialog {
+  /* 1. Centra la caja del diálogo */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  width: 400px;
+  height: 550px;
+  background-color: rgba(250, 243, 224, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 245, 0.3);
+  box-shadow: 3px 4px 28px 0 rgba(0, 0, 0, 0.3),
+    inset 0 3px 6px 0 rgba(244, 237, 228, 0.4),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.25);
+  filter: blur(6px);
+}
+
+#bookDialog::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1),
+    transparent 100%
+  );
+
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  color: #f4ede4;
+}
+
+form h2 {
+  text-align: left;
+  font-size: 2.5rem;
+  font-weight: 300;
+  border-bottom: 1px solid #f4ede4;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+label {
+  margin-top: 1rem;
+  width: 100%;
+  letter-spacing: 1px;
+  font-weight: 200;
+  pointer-events: none;
+}
+
+.glass-input {
+  width: 100%;
+  margin: 0.5rem 0;
+  height: 1.75rem;
+  padding: 0.5rem;
+  background-color: rgba(217, 207, 195, 0.45);
+  color: #f4ede4;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3),
+    inset 0 4px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 3px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--color-primary);
+}
+
+.readLabel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.readInput {
+  appearance: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: 1rem;
+  background-color: rgba(217, 207, 195, 0.45);
+  color: #f4ede4;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3),
+    inset 0 4px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.readInput:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='none' stroke='%23f4ede4' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.readInput:focus {
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
