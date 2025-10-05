@@ -45,6 +45,7 @@ h1 {
   color: var(--color-text-light);
   font-size: 3rem;
   font-weight: 300;
+  padding-top: 2rem;
 }
 
 button {
@@ -261,4 +262,108 @@ button,
 #cancelButton {
   transition: background-color 0.25s ease-in-out, border 0.25s ease-in-out,
     box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+/* Library Container */
+
+.libraryContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  justify-items: center;
+}
+
+/* === Book Cards === */
+
+.card {
+  background-color: rgba(250, 243, 224, 0.85);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: var(--color-text-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35),
+    inset 0 3px 6px rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out,
+    background-color 0.25s ease-out;
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background-color: rgba(250, 243, 224, 0.95);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45),
+    inset 0 4px 8px rgba(255, 255, 255, 0.35);
+}
+
+/* === Text elements === */
+
+.card h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(45, 45, 42, 0.25);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(45, 45, 42, 0.8);
+}
+
+/* === Buttons inside cards === */
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button-container button {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3),
+    inset 0 3px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease-out;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+/* Remove button */
+.button-container button:last-child {
+  background-color: rgba(204, 69, 50, 0.95);
+}
+
+/* Toggle status button */
+.button-container button:first-child {
+  background-color: rgba(129, 178, 154, 0.95);
+}
+
+.button-container button:hover {
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.button-container button:first-child:hover {
+  background-color: rgba(149, 198, 174, 0.95);
+}
+
+.button-container button:last-child:hover {
+  background-color: rgba(224, 89, 70, 0.95);
 }
